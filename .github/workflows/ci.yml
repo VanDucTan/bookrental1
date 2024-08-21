@@ -3,10 +3,10 @@ name: CI/CD test
 on:
   push:
     branches: 
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   build:
@@ -31,6 +31,6 @@ jobs:
       run: npm run build
 
     - name: Deploy (example for static sites)
-      if: github.ref == 'refs/heads/main'
+      if: github.ref == 'refs/heads/master'
       run: echo "Deployment process..."
       # Add deployment steps here, e.g., upload to AWS S3, Azure, Firebase, etc.
